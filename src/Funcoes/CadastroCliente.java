@@ -49,3 +49,9 @@ public class CadastroCliente {
 
     }
 }
+/*
+    PF: (1. JOSÉ,"", 3. JOÃO, 4. MARIA,"")
+    PJ: ("",2. LANCHONETE,"", "", 5. HOSPITAL)
+    ID(1,2,3,4,5)
+    for(int = 0;int < lista
+ */
