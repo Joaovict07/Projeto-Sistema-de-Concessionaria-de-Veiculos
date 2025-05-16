@@ -1,37 +1,31 @@
 package Cliente;
 
+import java.util.ArrayList;
+
 public class PF extends Cliente {
-    protected String cpf;
-    protected int idade;
-    protected String endereco;
+    protected ArrayList<String> listacpf = new ArrayList<String>();
+    protected ArrayList<Integer> listaidade = new ArrayList<Integer>();
+    protected ArrayList<String> listaendereco = new ArrayList<String>();
 
     public PF(String nome, String contato, String tipo, String cpf, int idade, String endereco) {
         super(nome, contato, tipo);
-        this.cpf = cpf;
+        listacpf.add(cpf);
     }
 
-    public String getCpf() {
-        return cpf;
+    public ArrayList<String> getlistacpf() {
+        return listacpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setlistacpf(String cpf) {listacpf.add(cpf);}
+
+    public ArrayList<Integer> getlistaidade() {return listaidade;}
+
+    public void setlistaidade(int idade) {listaidade.add(idade);}
+
+    public ArrayList<String> getEndereco() {
+        return listaendereco;
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
+    public void setlistaendereco(String endereco) {listaendereco.add(endereco);}
 
 }
