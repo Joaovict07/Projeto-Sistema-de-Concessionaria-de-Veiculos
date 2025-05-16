@@ -2,7 +2,7 @@ package Cliente;
 
 import java.util.ArrayList;
 public class Cliente {
-
+    protected ArrayList<Integer> listaID = new ArrayList<Integer>();
     protected ArrayList<String> listaNome = new ArrayList<String>();
     protected ArrayList<String> listaContato = new ArrayList<String>();
     protected ArrayList<String> listaTipo = new ArrayList<String>();
@@ -11,6 +11,9 @@ public class Cliente {
         listaNome.add(nome);
         listaContato.add(contato);
         listaTipo.add(tipo);
+    }
+    public ArrayList<Integer> getListaID() {
+        return listaID;
     }
     public ArrayList<String> getListaNome() {
         return listaNome;
