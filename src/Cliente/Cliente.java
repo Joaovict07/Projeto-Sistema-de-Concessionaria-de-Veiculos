@@ -1,3 +1,6 @@
+package Cliente;
+
+import java.util.ArrayList;
 public class Cliente {
 
     protected String nome;

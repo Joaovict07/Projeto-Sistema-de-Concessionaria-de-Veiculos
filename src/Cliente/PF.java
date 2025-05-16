@@ -1,3 +1,5 @@
+package Cliente;
+
 public class PF extends Cliente {
     protected String cpf;
     protected int idade;
