@@ -3,37 +3,31 @@ package Cliente;
 import java.util.ArrayList;
 public class Cliente {
 
-    protected String nome;
-    protected String contato;
-    protected String tipo;
+    protected ArrayList<String> listaNome = new ArrayList<String>();
+    protected ArrayList<String> listaContato = new ArrayList<String>();
+    protected ArrayList<String> listaTipo = new ArrayList<String>();
 
     public Cliente(String nome, String contato, String tipo) {
-        this.nome = nome;
-        this.contato = contato;
-        this.tipo = tipo;
+        listaNome.add(nome);
+        listaContato.add(contato);
+        listaTipo.add(tipo);
     }
-
-    public String getNome() {
-        return nome;
+    public ArrayList<String> getListaNome() {
+        return listaNome;
     }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setListaNome(String nome) {
+        listaNome.add(nome);
     }
-
-    public String getContato() {
-        return contato;
+    public ArrayList<String> getListaContato() {
+        return listaContato;
     }
-
-    public void setContato(String contato) {
-        this.contato = contato;
+    public void setListaContato(String contato) {
+        listaContato.add(contato);
     }
-
-    public String getTipo() {
-        return tipo;
+    public ArrayList<String> getListaTipo() {
+        return listaTipo;
     }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setListaTipo(String tipo) {
+        listaTipo.add(tipo);
     }
 }
