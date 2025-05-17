@@ -1,3 +1,4 @@
+import Cliente.Cliente;
 import Funcoes.*;
 
 import java.util.Scanner;
@@ -6,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean system = true;
+        Cliente cliente = new Cliente("", "", "");
         while (system){
             System.out.println("-------------------------------------------------------------------------------------");
             System.out.println("                     Seja bem-vindo a nossa concessionária!!!");
@@ -30,12 +32,12 @@ public class Main {
                 opcao = sc.nextLine();
                 switch(opcao){
                     case "1":
-                        CadastroCliente cadastroCliente = new CadastroCliente();
+                        CadastroCliente cadastroCliente = new CadastroCliente(cliente);
                         break;
                     case "2":
 
                         break;
-                    case "3": RemoverCliente usuario = new RemoverCliente();
+                    case "3": RemoverCliente usuario = new RemoverCliente(cliente);
 
                         break;
                     case "4":

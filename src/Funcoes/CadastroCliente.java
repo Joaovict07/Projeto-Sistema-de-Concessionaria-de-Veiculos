@@ -4,7 +4,7 @@ import Cliente.*;
 import java.util.*;
 
 public class CadastroCliente {
-    public CadastroCliente(){
+    public CadastroCliente(Cliente cliente){
         String tipo = "";
         String cnpj = "";
         String cpf = "";
@@ -31,9 +31,7 @@ public class CadastroCliente {
             System.out.println("Digite uma forma de contato: ");
             contato = cadastro.nextLine();
             PJ pj = new PJ(nome, contato, tipo,cnpj);
-            Cliente cliente = new Cliente(nome, contato, tipo);
             cliente.setListaClientes(nome+", "+contato+", "+tipo+", "+ cnpj);
-            System.out.println(cliente.getListaClientes());
         }
         else if(tipo.toUpperCase().contains("PF")){
             System.out.println("Digite o CPF: ");
@@ -57,9 +55,7 @@ public class CadastroCliente {
             endereco = cadastro.nextLine();
 
             PF pf = new PF(nome,contato, tipo, cpf, idade, endereco);
-            Cliente cliente = new Cliente(nome, contato, tipo);
             cliente.setListaClientes(nome+", "+contato+", "+tipo+", "+ cpf+", " + idade + ", "+endereco);
-            System.out.println(cliente.getListaClientes());
         }
 
     }

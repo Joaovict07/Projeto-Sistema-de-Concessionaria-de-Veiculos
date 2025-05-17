@@ -41,7 +41,7 @@ public class Cliente {
         if(listaID.size()==0){
             id = 0;
         }else{
-            id = listaID.size()+1;
+            id = listaID.size();
         }
         listaID.add(id);
         String dadosCliente = id+". "+cliente;
