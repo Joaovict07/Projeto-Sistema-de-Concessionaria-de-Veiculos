@@ -2,47 +2,73 @@ package Funcoes;
 import Veiculo.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.*;
 
 public class CadastroVeiculo {
+    private Map<String, ArrayList<Veiculo>> listas = new HashMap<>();
+
     public CadastroVeiculo() {
-        ArrayList<Veiculo> listaCarros = new ArrayList<>();
-        ArrayList<Veiculo> listaMotos = new ArrayList<>();
-        ArrayList<Veiculo> listaUtilitarios = new ArrayList<>();
-        Scanner veiculo = new Scanner(System.in);
-        System.out.println("Digite o tipo de veículo ex(carro, moto, utilitário, etc...): ");
-        String tipo = veiculo.next();
-        System.out.println("Digite o modelo do veículo : ");
-        String modelo = veiculo.next();
-        System.out.println("Digite o fabricante : ");
-        String fabricante = veiculo.next();
-        System.out.println("Digite o ano de fabricação : ");
-        int ano = veiculo.nextInt();
-
-        veiculo.Close();
-
-        switch (tipo.toUpperCase()) {
-            case "CARRO":
-                Carro carro1 = new Carro();
-                carro1.setModelo(modelo);
-                carro1.setFabricante(fabricante);
-                carro1.setAno_fabricacao(ano);
-                listaCarros.add(carro1);
-            case "MOTO":
-                Veiculo moto1 = new Moto();
-                moto1.modelo = modelo;
-                moto1.fabricante = fabricante;
-                moto1.ano_fabricacao = ano;
-                listaMotos.add(moto1);
-            case "UTILITÁRIO", "UTILITARIO":
-                Veiculo utilitario1 = new Utilitario();
-                utilitario1.modelo = modelo;
-                utilitario1.fabricante = fabricante;
-                utilitario1.ano_fabricacao = ano;
-                listaUtilitarios.add(utilitario1);
-            default:
-                System.out.println("O tipo digitado não existe!");
-                break;
-        }
-        System.out.println("Veículo cadastrado com sucesso!!");
+        listas.put("Carros", new ArrayList<>());
+        listas.put("Motos", new ArrayList<>());
+        listas.put("Utilitários", new ArrayList<>());
     }
+
+    public void menuCadastro(Scanner scanner) {
+        boolean voltar = false;
+
+        while (!voltar) {
+            System.out.println("1 Cadastrar Veículo");
+            System.out.println("2 Voltar");
+            int opcao = scanner.nextInt();
+            if (opcao == 1) {
+                System.out.println("Digite o tipo de veículo ex(carro, moto, utilitário, etc...): ");
+                String tipo = scanner.next();
+                System.out.println("Digite o modelo do veículo : ");
+                String modelo = scanner.next();
+                System.out.println("Digite o fabricante : ");
+                String fabricante = scanner.next();
+                System.out.println("Digite o ano de fabricação : ");
+                int ano = scanner.nextInt();
+
+                switch (tipo.toUpperCase()) {
+                    case "CARRO":
+                        adicionarCarro(modelo, fabricante, "Carro", ano, "disponível");
+                        System.out.println("Veículo cadastrado com sucesso!!");
+                        break;
+                    case "MOTO":
+                        adicionarMoto(modelo, fabricante, "Moto", ano, "disponível");
+                        System.out.println("Veículo cadastrado com sucesso!!");
+                        break;
+                    case "UTILITÁRIO", "UTILITARIO":
+                        adicionarUtilitario(modelo, fabricante, "Utilitário", ano, "disponível");
+                        System.out.println("Veículo cadastrado com sucesso!!");
+                        break;
+                    default:
+                        System.out.println("Opção inválida!");
+                        break;
+                }
+            }else if (opcao == 2) {
+                voltar = true;
+            }else {
+                System.out.println("Opção inválida!!");
+            }
+        }
+    }
+
+    public void adicionarCarro (String modelo, String fabricante, String tipo, int ano, String status) {
+        listas.get("Carros").add(new Carro(modelo, fabricante, ano, status, tipo));
+    }
+
+    public void adicionarMoto (String modelo, String fabricante, String tipo, int ano, String status) {
+        listas.get("Motos").add(new Moto(modelo, fabricante, ano, status, tipo));
+    }
+
+    public void adicionarUtilitario (String modelo, String fabricante, String tipo, int ano, String status) {
+        listas.get("Utilitários").add(new Utilitario(modelo, fabricante, ano, status, tipo));
+    }
+
+    public Map<String, ArrayList<Veiculo>> getListas() {
+        return listas;
+    }
+
 }
