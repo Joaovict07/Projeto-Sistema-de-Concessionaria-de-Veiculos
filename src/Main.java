@@ -38,6 +38,7 @@ public class Main {
 
                         break;
                     case "3": RemoverCliente usuario = new RemoverCliente(cliente);
+                            opcao = "0";
 
                         break;
                     case "4":
