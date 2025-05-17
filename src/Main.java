@@ -35,7 +35,7 @@ public class Main {
                     case "2":
 
                         break;
-                    case "3":
+                    case "3": RemoverCliente usuario = new RemoverCliente();
 
                         break;
                     case "4":

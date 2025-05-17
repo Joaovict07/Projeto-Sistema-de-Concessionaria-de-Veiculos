@@ -45,6 +45,6 @@ public class Cliente {
         }
         listaID.add(id);
         String dadosCliente = id+". "+cliente;
-        listaClientes.add(cliente);
+        listaClientes.add(dadosCliente);
     }
 }
