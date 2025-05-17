@@ -2,6 +2,7 @@ package Cliente;
 
 import java.util.ArrayList;
 public class Cliente {
+    protected ArrayList<String> listaClientes = new ArrayList<String>();
     protected ArrayList<Integer> listaID = new ArrayList<Integer>();
     protected ArrayList<String> listaNome = new ArrayList<String>();
     protected ArrayList<String> listaContato = new ArrayList<String>();
@@ -31,5 +32,19 @@ public class Cliente {
     }
     public void setListaTipo(String tipo) {
         listaTipo.add(tipo);
+    }
+    public ArrayList<String> getListaClientes() {
+        return listaClientes;
+    }
+    public void setListaClientes(String cliente) {
+        int id = 0;
+        if(listaID.size()==0){
+            id = 0;
+        }else{
+            id = listaID.size()+1;
+        }
+        listaID.add(id);
+        String dadosCliente = id+". "+cliente;
+        listaClientes.add(cliente);
     }
 }
