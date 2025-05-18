@@ -6,11 +6,6 @@ public class PF extends Cliente {
     protected ArrayList<Integer> listaidade = new ArrayList<Integer>();
     protected ArrayList<String> listaendereco = new ArrayList<String>();
 
-    public PF(String nome, String contato, String tipo, String cpf, int idade, String endereco) {
-        super(nome, contato, tipo);
-        listacpf.add(cpf);
-    }
-
     public ArrayList<String> getlistacpf() {
         return listacpf;
     }

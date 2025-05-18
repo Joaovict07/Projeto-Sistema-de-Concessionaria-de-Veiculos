@@ -1,13 +1,15 @@
 import Cliente.Cliente;
 import Funcoes.*;
-
+import Cliente.*;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean system = true;
-        Cliente cliente = new Cliente("", "", "");
+        PF pf = new PF();
+        PJ pj = new PJ();
+        Cliente cliente = new Cliente();
         while (system){
             System.out.println("-------------------------------------------------------------------------------------");
             System.out.println("                     Seja bem-vindo a nossa concessionária!!!");
@@ -32,17 +34,17 @@ public class Main {
                 opcao = sc.nextLine();
                 switch(opcao){
                     case "1":
-                            CadastroCliente cadastroCliente = new CadastroCliente(cliente);
+                            CadastroCliente cadastroCliente = new CadastroCliente(pf, pj);
                     break;
                     case "2":
-
+                            EditarClientes editarClientes = new EditarClientes(pf, pj);
                     break;
                     case "3":
-                            RemoverCliente removerCliente = new RemoverCliente(cliente);
+                            RemoverCliente removerCliente = new RemoverCliente(pf, pj);
                             opcao = "0";
                     break;
                     case "4":
-                            ListarClientes listarClientes = new ListarClientes(cliente);
+                            ListarClientes listarClientes = new ListarClientes(pf, pj);
                     break;
                     default:
                             System.out.println("Opção inválida!");
@@ -50,6 +52,7 @@ public class Main {
 
             }
             if(opcao.equals("3")){
+                System.out.println("Volte sempre!");
                 system = false;
             }
         }
