@@ -8,7 +8,6 @@ public class Main {
         boolean system = true;
         PF pf = new PF();
         PJ pj = new PJ();
-        Cliente cliente = new Cliente();
         while (system){
             System.out.println("-------------------------------------------------------------------------------------");
             System.out.println("                     Seja bem-vindo a nossa concessionária!!!");
