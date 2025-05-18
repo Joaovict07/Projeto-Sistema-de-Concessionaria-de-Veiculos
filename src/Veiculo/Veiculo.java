@@ -62,4 +62,8 @@ public class Veiculo {
     public void exibirInformacoes() {
         System.out.println("Modelo: " + getModelo()  + "\nFabricante: " + getFabricante() + "\nAno-Fabricação: " + getAno_fabricacao() + "\nTipo: " + getTipo() + "\nStatus: " + getStatus());
     }
+
+    public String toString() {
+        return "Modelo: " + getModelo()  + "\nFabricante: " + getFabricante() + "\nAno-Fabricação: " + getAno_fabricacao() + "\nTipo: " + getTipo() + "\nStatus: " + getStatus();
+    }
 }
