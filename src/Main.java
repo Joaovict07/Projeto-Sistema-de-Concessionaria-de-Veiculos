@@ -1,3 +1,7 @@
+import Funcoes.Veiculos.CadastroVeiculo;
+import Funcoes.Veiculos.EditarVeiculo;
+import Funcoes.Veiculos.RemoverVeiculo;
+
 import Cliente.Cliente;
 import Funcoes.*;
 import Funcoes.Vendas.ListarVendas;
@@ -7,7 +11,6 @@ import Vendas.*;
 import java.util.*;
 import Cliente.*;
 import Funcoes.Clientes.*;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -85,7 +88,6 @@ public class Main {
                         break;
                     case "4":
                         cadastro.mostrarVeiculos();
-                        break;
                 }
             }
             if(opcao.equals("3")){
