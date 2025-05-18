@@ -33,7 +33,7 @@ public class CadastroCliente {
             System.out.println("Cliente cadastrado com sucesso!");
 
             PJ pj = new PJ(nome, contato, tipo,cnpj);
-            cliente.setListaClientes("Nome: "+nome+", Contato: "+contato+", Tipo Cliente: "+tipo+", CNPJ: "+ cnpj);
+            cliente.setListaClientes("Nome: " + nome + ", Contato: " + contato + ", Tipo Cliente: " + tipo.toUpperCase() + ", CNPJ: " + cnpj);
         }
         else if(tipo.toUpperCase().contains("PF")){
             System.out.println("Digite o CPF: ");
@@ -58,7 +58,7 @@ public class CadastroCliente {
             System.out.println("Cliente cadastrado com sucesso!");
 
             PF pf = new PF(nome,contato, tipo, cpf, idade, endereco);
-            cliente.setListaClientes("Nome: "+nome+", Contato: "+contato+", Tipo Cliente: "+tipo+", CPF: "+ cpf+", Idade: " + idade + ", Endereço: "+endereco);
+            cliente.setListaClientes("Nome: " + nome + ", Contato: " + contato + ", Tipo Cliente: " + tipo.toUpperCase() + ", CPF: " + cpf + ", Idade: " + idade + ", Endereço: " + endereco);
         }
 
     }

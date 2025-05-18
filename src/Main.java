@@ -40,13 +40,12 @@ public class Main {
                     case "3":
                             RemoverCliente removerCliente = new RemoverCliente(cliente);
                             opcao = "0";
-
                     break;
                     case "4":
                             ListarClientes listarClientes = new ListarClientes(cliente);
                     break;
                     default:
-                        System.out.println("Opção inválida!");
+                            System.out.println("Opção inválida!");
                 }
 
             }

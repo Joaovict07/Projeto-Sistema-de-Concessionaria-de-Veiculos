@@ -37,14 +37,8 @@ public class Cliente {
         return listaClientes;
     }
     public void setListaClientes(String cliente) {
-        int id = 0;
-        if(listaID.size()==0){
-            id = 0;
-        }else{
-            id = listaID.size();
-        }
-        listaID.add(id);
-        String dadosCliente = "ID: "+id+". "+cliente;
+        int id = listaClientes.size();
+        String dadosCliente = cliente;
         listaClientes.add(dadosCliente);
     }
 }

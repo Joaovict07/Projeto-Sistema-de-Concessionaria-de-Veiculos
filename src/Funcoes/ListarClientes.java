@@ -3,8 +3,8 @@ import Cliente.*;
 public class ListarClientes {
     public ListarClientes(Cliente clientes){
         System.out.println("Lista de Clientes: ");
-        for(String cliente: clientes.getListaClientes()){
-            System.out.println(cliente);
+        for(int i = 0; i< clientes.getListaClientes().size(); i++){
+            System.out.println("ID: " + i + ", " + clientes.getListaClientes().get(i));
         }
     }
 }
