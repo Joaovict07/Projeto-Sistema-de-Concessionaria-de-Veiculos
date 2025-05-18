@@ -1,5 +1,6 @@
 import Cliente.Cliente;
 import Funcoes.*;
+import Funcoes.Vendas.ListarVendas;
 import Funcoes.Vendas.RealizarVenda;
 import Veiculo.Veiculo;
 import Vendas.*;
@@ -98,6 +99,7 @@ public class Main {
                         RealizarVenda realizarVenda = new RealizarVenda(pf, pj, venda, cadastro);
                     break;
                     case "2":
+                        ListarVendas listarVendas = new ListarVendas(venda);
 
                     break;
                 }
