@@ -32,18 +32,19 @@ public class Main {
                 opcao = sc.nextLine();
                 switch(opcao){
                     case "1":
-                        CadastroCliente cadastroCliente = new CadastroCliente(cliente);
-                        break;
+                            CadastroCliente cadastroCliente = new CadastroCliente(cliente);
+                    break;
                     case "2":
 
-                        break;
-                    case "3": RemoverCliente usuario = new RemoverCliente(cliente);
+                    break;
+                    case "3":
+                            RemoverCliente removerCliente = new RemoverCliente(cliente);
                             opcao = "0";
 
-                        break;
+                    break;
                     case "4":
-
-                        break;
+                            ListarClientes listarClientes = new ListarClientes(cliente);
+                    break;
                     default:
                         System.out.println("Opção inválida!");
                 }
@@ -65,7 +66,5 @@ public class Main {
 //                "9 - Realizar Venda (opcional)  \n" +
 //                "10 - Ver Histórico de Vendas (opcional)  \n" +
 //                "11 - Sair  ");
-
-
     }
 }
