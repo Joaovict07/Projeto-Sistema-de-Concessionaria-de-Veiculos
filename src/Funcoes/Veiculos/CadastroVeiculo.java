@@ -1,4 +1,4 @@
-package Funcoes;
+package Funcoes.Veiculos;
 
 import java.util.*;
 import Veiculo.*;
@@ -27,11 +27,41 @@ public class CadastroVeiculo {
             System.out.print("Informe o fabricante: ");
             String fabricante = scanner.nextLine();
 
+            int ano;
+            while (true) {
             System.out.print("Informe o ano do veículo: ");
-            int ano = scanner.nextInt();
+            ano = scanner.nextInt();
+            try {
+                if (ano > 2025) {
+                    System.out.println("Erro: o ano deve ser no máximo 2025");
+                }else {
+                    break;
+                }
+            } catch(NumberFormatException e) {
+                System.out.println("Erro: digite apenas números válidos!");
+            }
+
+            }
             String status = "disponível";
             scanner.nextLine();
-            Veiculo v = new Veiculo(modelo, fabricante, ano, categoria, status);
+
+            Veiculo v = null;
+            try {
+            if (categoria.toUpperCase().equals("CARRO")) {
+                v = new Carro(modelo, fabricante, ano, categoria, status);
+            }else if (categoria.toUpperCase().equals("MOTO")) {
+                v = new Moto(modelo, fabricante, ano, categoria, status);
+            }else if (categoria.toUpperCase().equals("UTILITARIO") || categoria.toUpperCase().equals("UTILITÁRIO")) {
+                v = new Utilitario(modelo, fabricante, ano, categoria, status);
+            }else {
+                System.out.println("A categoria de veículo fornecida é inválida!");
+                break;
+            }
+
+            }catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
+                break;
+            }
             adicionarVeiculo(proximoIndice, v);
             proximoIndice++;
         }

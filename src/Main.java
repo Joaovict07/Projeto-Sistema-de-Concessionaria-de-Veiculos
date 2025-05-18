@@ -1,17 +1,15 @@
-import Cliente.Cliente;
-import Funcoes.*;
-import Veiculo.Veiculo;
+import Funcoes.Veiculos.CadastroVeiculo;
+import Funcoes.Veiculos.EditarVeiculo;
+import Funcoes.Veiculos.RemoverVeiculo;
 
 import java.util.*;
 import Cliente.*;
 import Funcoes.Clientes.*;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean system = true;
-        Cliente cliente = new Cliente("", "", "");
         CadastroVeiculo cadastro = new CadastroVeiculo();
         EditarVeiculo editar = new EditarVeiculo();
         RemoverVeiculo deletar = new RemoverVeiculo();
@@ -83,7 +81,6 @@ public class Main {
                         break;
                     case "4":
                         cadastro.mostrarVeiculos();
-                        break;
                 }
             }
             if(opcao.equals("3")){

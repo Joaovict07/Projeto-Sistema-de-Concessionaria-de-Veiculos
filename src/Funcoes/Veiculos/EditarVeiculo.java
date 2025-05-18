@@ -1,4 +1,4 @@
-package Funcoes;
+package Funcoes.Veiculos;
 import Veiculo.Veiculo;
 
 import java.util.Map;

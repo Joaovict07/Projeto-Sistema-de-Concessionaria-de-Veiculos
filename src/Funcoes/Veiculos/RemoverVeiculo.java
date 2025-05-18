@@ -1,4 +1,4 @@
-package Funcoes;
+package Funcoes.Veiculos;
 import Veiculo.Veiculo;
 import java.util.Map;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class RemoverVeiculo {
         }
 
         System.out.println("\n=== Veículos disponíveis para remoção ===");
-        System.out.printf("%-10s %-15s %-20s %-25s\n", "ÍNDICE", "MODELO", "FABRICANTE", "ANO");
+        System.out.printf("%-10s %-15s %-20s %-25s\n", "ID", "MODELO", "FABRICANTE", "ANO");
         System.out.println("------------------------------------------------");
 
         for (Map.Entry<Integer, Veiculo> entry : veiculos.entrySet()) {
