@@ -3,6 +3,9 @@ import Funcoes.*;
 import Veiculo.Veiculo;
 
 import java.util.*;
+import Cliente.*;
+import Funcoes.Clientes.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +15,8 @@ public class Main {
         CadastroVeiculo cadastro = new CadastroVeiculo();
         EditarVeiculo editar = new EditarVeiculo();
         RemoverVeiculo deletar = new RemoverVeiculo();
+        PF pf = new PF();
+        PJ pj = new PJ();
         while (system){
             System.out.println("-------------------------------------------------------------------------------------");
             System.out.println("                     Seja bem-vindo a nossa concessionária!!!");
@@ -19,12 +24,15 @@ public class Main {
             System.out.println("Selecione abaixo uma opção: ");
             System.out.println("1. Clientes.");
             System.out.println("2. Veículos.");
-            System.out.println("3. Finalizar sistema.");
+            System.out.println("3. Vendas");
+            System.out.println("4. Finalizar sistema.");
             String opcao = sc.nextLine();
             while(!opcao.equals("1")&&!opcao.equals("2")&&!opcao.equals("3")){
                 System.out.println("Opção inválida!");
                 System.out.println("1. Clientes.");
                 System.out.println("2. Veículos.");
+                System.out.println("3. Vendas");
+                System.out.println("4. Finalizar sistema.");
                 opcao = sc.nextLine();
             }
             if(opcao.equals("1")){
@@ -36,20 +44,23 @@ public class Main {
                 opcao = sc.nextLine();
                 switch(opcao){
                     case "1":
-                        CadastroCliente cadastroCliente = new CadastroCliente(cliente);
-                        break;
-                    case "2":
-
-                        break;
-                    case "3": RemoverCliente usuario = new RemoverCliente(cliente);
+                            CadastroCliente cadastroCliente = new CadastroCliente(pf, pj);
                             opcao = "0";
-
-                        break;
+                    break;
+                    case "2":
+                            EditarClientes editarClientes = new EditarClientes(pf, pj);
+                            opcao = "0";
+                    break;
+                    case "3":
+                            RemoverCliente removerCliente = new RemoverCliente(pf, pj);
+                            opcao = "0";
+                    break;
                     case "4":
-
-                        break;
+                            ListarClientes listarClientes = new ListarClientes(pf, pj);
+                            opcao = "0";
+                    break;
                     default:
-                        System.out.println("Opção inválida!");
+                            System.out.println("Opção inválida!");
                 }
 
             }
@@ -76,6 +87,10 @@ public class Main {
                 }
             }
             if(opcao.equals("3")){
+
+            }
+            if(opcao.equals("4")){
+                System.out.println("Volte sempre!");
                 system = false;
             }
         }
@@ -91,7 +106,5 @@ public class Main {
 //                "9 - Realizar Venda (opcional)  \n" +
 //                "10 - Ver Histórico de Vendas (opcional)  \n" +
 //                "11 - Sair  ");
-
-
     }
 }

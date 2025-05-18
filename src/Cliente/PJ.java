@@ -14,9 +14,4 @@ public class PJ extends Cliente {
         listaCNPJ.add(cnpj);
     }
 
-    public PJ(String nome, String contato, String tipo, String cnpj) {
-        super(nome, contato, tipo);
-        listaCNPJ.add(cnpj);
-    }
-
 }

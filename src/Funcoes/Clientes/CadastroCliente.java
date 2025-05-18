@@ -1,10 +1,11 @@
-package Funcoes;
+package Funcoes.Clientes;
 
 import Cliente.*;
 import java.util.*;
 
 public class CadastroCliente {
-    public CadastroCliente(Cliente cliente){
+    public CadastroCliente(PF pf, PJ pj){
+        //Inicializando variáveis
         String tipo = "";
         String cnpj = "";
         String cpf = "";
@@ -13,8 +14,10 @@ public class CadastroCliente {
         String endereco = "";
         int idade = 0;
         Scanner cadastro = new Scanner(System.in);
+
         System.out.println("Qual o tipo do cliente?(PF OU PJ)");
         tipo = cadastro.nextLine();
+
         while(!tipo.toUpperCase().equals("PF")&&!tipo.toUpperCase().equals("PJ")){
             System.out.println("Tipo inválido! Digite novamente, qual o tipo do cliente?(PF ou PJ)");
             tipo = cadastro.nextLine();
@@ -32,8 +35,10 @@ public class CadastroCliente {
             contato = cadastro.nextLine();
             System.out.println("Cliente cadastrado com sucesso!");
 
-            PJ pj = new PJ(nome, contato, tipo,cnpj);
-            cliente.setListaClientes("Nome: "+nome+", Contato: "+contato+", Tipo Cliente: "+tipo+", CNPJ: "+ cnpj);
+            pj.setListaNome(nome);
+            pj.setListaContato(contato);
+            pj.setListaTipo(tipo);
+            pj.setListaCNPJ(cnpj);
         }
         else if(tipo.toUpperCase().contains("PF")){
             System.out.println("Digite o CPF: ");
@@ -57,24 +62,12 @@ public class CadastroCliente {
             endereco = cadastro.nextLine();
             System.out.println("Cliente cadastrado com sucesso!");
 
-            PF pf = new PF(nome,contato, tipo, cpf, idade, endereco);
-            cliente.setListaClientes("Nome: "+nome+", Contato: "+contato+", Tipo Cliente: "+tipo+", CPF: "+ cpf+", Idade: " + idade + ", Endereço: "+endereco);
+            pf.setListaNome(nome);
+            pf.setListaContato(contato);
+            pf.setListaTipo(tipo);
+            pf.setlistacpf(cpf);
+            pf.setlistaidade(idade);
+            pf.setlistaendereco(endereco);
         }
-
     }
 }
-/*
-    Clientes(ID, NOME, CONTATO, TIPO, CODIGO, IDADE, ENDERECO)
-    PFNomes: (0. JOSÉ,"", 2. JOÃO, 3. MARIA,"")
-    PJNomes: ("",1. LANCHONETE,"", "", 4. HOSPITAL)
-    PJCPNJ: ("")
-    PFCPF: ("3895438245")
-    ID: (0,1,2,3,4)
-    for(int i= 0;i < listaIDS;i++){
-        PFnome.get(i)
-        if(pfnome == "0"){
-            pjnome.get(i)
-        }
-        System.out.print.ln(
-    }
- */
