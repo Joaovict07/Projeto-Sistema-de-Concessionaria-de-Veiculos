@@ -1,3 +1,8 @@
+import Cliente.Cliente;
+import Funcoes.*;
+import Veiculo.Veiculo;
+
+import java.util.*;
 import Cliente.*;
 import Funcoes.Clientes.*;
 import java.util.Scanner;
@@ -6,6 +11,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean system = true;
+        Cliente cliente = new Cliente("", "", "");
+        CadastroVeiculo cadastro = new CadastroVeiculo();
+        EditarVeiculo editar = new EditarVeiculo();
+        RemoverVeiculo deletar = new RemoverVeiculo();
         PF pf = new PF();
         PJ pj = new PJ();
         while (system){
@@ -54,6 +63,28 @@ public class Main {
                             System.out.println("Opção inválida!");
                 }
 
+            }
+            if(opcao.equals("2")) {
+                System.out.println("Qual função deseja realizar?");
+                System.out.println("1. Cadastro de veículo.");
+                System.out.println("2. Editar veículo.");
+                System.out.println("3. Remover veículo.");
+                System.out.println("4. Listar veículos.");
+                opcao = sc.nextLine();
+                switch(opcao) {
+                    case "1":
+                        cadastro.iniciarCadastro();
+                        break;
+                    case "2":
+                        editar.editar(cadastro.getVeiculos());
+                        break;
+                    case "3":
+                        deletar.remover(cadastro.getVeiculos());
+                        break;
+                    case "4":
+                        cadastro.mostrarVeiculos();
+                        break;
+                }
             }
             if(opcao.equals("3")){
 
