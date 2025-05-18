@@ -1,6 +1,5 @@
-import Cliente.Cliente;
-import Funcoes.*;
 import Cliente.*;
+import Funcoes.Clientes.*;
 import java.util.Scanner;
 
 public class Main {
@@ -17,12 +16,15 @@ public class Main {
             System.out.println("Selecione abaixo uma opção: ");
             System.out.println("1. Clientes.");
             System.out.println("2. Veículos.");
-            System.out.println("3. Finalizar sistema.");
+            System.out.println("3. Vendas");
+            System.out.println("4. Finalizar sistema.");
             String opcao = sc.nextLine();
             while(!opcao.equals("1")&&!opcao.equals("2")&&!opcao.equals("3")){
                 System.out.println("Opção inválida!");
                 System.out.println("1. Clientes.");
                 System.out.println("2. Veículos.");
+                System.out.println("3. Vendas");
+                System.out.println("4. Finalizar sistema.");
                 opcao = sc.nextLine();
             }
             if(opcao.equals("1")){
@@ -35,9 +37,11 @@ public class Main {
                 switch(opcao){
                     case "1":
                             CadastroCliente cadastroCliente = new CadastroCliente(pf, pj);
+                            opcao = "0";
                     break;
                     case "2":
                             EditarClientes editarClientes = new EditarClientes(pf, pj);
+                            opcao = "0";
                     break;
                     case "3":
                             RemoverCliente removerCliente = new RemoverCliente(pf, pj);
@@ -45,6 +49,7 @@ public class Main {
                     break;
                     case "4":
                             ListarClientes listarClientes = new ListarClientes(pf, pj);
+                            opcao = "0";
                     break;
                     default:
                             System.out.println("Opção inválida!");
@@ -52,6 +57,9 @@ public class Main {
 
             }
             if(opcao.equals("3")){
+
+            }
+            if(opcao.equals("4")){
                 System.out.println("Volte sempre!");
                 system = false;
             }

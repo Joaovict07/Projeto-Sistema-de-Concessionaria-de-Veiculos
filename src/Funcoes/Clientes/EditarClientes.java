@@ -1,4 +1,4 @@
-package Funcoes;
+package Funcoes.Clientes;
 
 import Cliente.*;
 
