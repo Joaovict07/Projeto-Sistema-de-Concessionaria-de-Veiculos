@@ -2,6 +2,11 @@ import Funcoes.Veiculos.CadastroVeiculo;
 import Funcoes.Veiculos.EditarVeiculo;
 import Funcoes.Veiculos.RemoverVeiculo;
 
+import Cliente.Cliente;
+import Funcoes.*;
+import Funcoes.Vendas.RealizarVenda;
+import Veiculo.Veiculo;
+import Vendas.*;
 import java.util.*;
 import Cliente.*;
 import Funcoes.Clientes.*;
@@ -13,6 +18,7 @@ public class Main {
         CadastroVeiculo cadastro = new CadastroVeiculo();
         EditarVeiculo editar = new EditarVeiculo();
         RemoverVeiculo deletar = new RemoverVeiculo();
+        Venda venda = new Venda();
         PF pf = new PF();
         PJ pj = new PJ();
         while (system){
@@ -25,7 +31,7 @@ public class Main {
             System.out.println("3. Vendas");
             System.out.println("4. Finalizar sistema.");
             String opcao = sc.nextLine();
-            while(!opcao.equals("1")&&!opcao.equals("2")&&!opcao.equals("3")){
+            while(!opcao.equals("1")&&!opcao.equals("2")&&!opcao.equals("3")&&!opcao.equals("4")){
                 System.out.println("Opção inválida!");
                 System.out.println("1. Clientes.");
                 System.out.println("2. Veículos.");
@@ -84,6 +90,19 @@ public class Main {
                 }
             }
             if(opcao.equals("3")){
+                opcao = "0";
+                System.out.println("Qual função deseja realizar?");
+                System.out.println("1. Cadastro de venda.");
+                System.out.println("2. Listar vendas.");
+                opcao = sc.nextLine();
+                switch(opcao){
+                    case "1":
+                        RealizarVenda realizarVenda = new RealizarVenda(pf, pj, venda, cadastro);
+                    break;
+                    case "2":
+
+                    break;
+                }
 
             }
             if(opcao.equals("4")){
