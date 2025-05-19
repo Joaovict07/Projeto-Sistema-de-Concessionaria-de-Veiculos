@@ -1,11 +1,5 @@
-import Funcoes.Veiculos.CadastroVeiculo;
-import Funcoes.Veiculos.EditarVeiculo;
-import Funcoes.Veiculos.RemoverVeiculo;
-
-import Cliente.Cliente;
-import Funcoes.*;
-import Funcoes.Vendas.ListarVendas;
-import Funcoes.Vendas.RealizarVenda;
+import Funcoes.Veiculos.*;
+import Funcoes.Vendas.*;
 import Vendas.*;
 import java.util.*;
 import Cliente.*;

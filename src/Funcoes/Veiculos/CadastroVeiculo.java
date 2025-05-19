@@ -71,7 +71,6 @@ public class CadastroVeiculo {
         }
 
         System.out.println("\nCadastro finalizado!");
-        System.out.println("DEBUG: Total de modelos cadastrados: " + veiculos.size());
     }
 
     public void adicionarVeiculo(int ind, Veiculo v) {

@@ -1,10 +1,6 @@
 package Funcoes.Vendas;
 import Cliente.*;
-<<<<<<< HEAD
 import Funcoes.Veiculos.*;
-=======
-import Funcoes.Veiculos.CadastroVeiculo;
->>>>>>> 0fa5d91acec68453fe7ae1d968f03ce0fa56d56c
 import Vendas.*;
 import java.util.Scanner;
 import java.util.Date;
@@ -39,11 +35,12 @@ public class RealizarVenda {
 
                     System.out.println("Confirme a venda:");
                     System.out.println("Modelo: " + cadastro.getVeiculos().get(veiculo).getModelo()
-                    +"\nNome do Cliente: " + nome + "\nCPF do Cliente: " + cpf + "\nData da compra: " + data);
+                                        +"\nValor do veículo: " + cadastro.getVeiculos().get(veiculo).getPreco() + "\nNome do Cliente: " + nome +
+                                                "\nCPF do Cliente: " + cpf + "\nData da compra: " + data);
                     System.out.println("Deseja prosseguir? (Sim/Não)");
                     String confirm = sc.nextLine();
                     if(confirm.toUpperCase().equals("SIM")){
-                        //                  venda.setValorVeiculo(cadastro.getVeiculos().get(veiculo).getPreco());
+                        venda.setValorVeiculo(cadastro.getVeiculos().get(veiculo).getPreco());
                         venda.setNomeVeiculo(cadastro.getVeiculos().get(veiculo).getModelo());
                         venda.setDataVenda(data);
                         venda.setCodigoCliente(cpf);
