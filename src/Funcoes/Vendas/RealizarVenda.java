@@ -1,6 +1,6 @@
 package Funcoes.Vendas;
 import Cliente.*;
-import Funcoes.*;
+import Funcoes.Veiculos.*;
 import Vendas.*;
 import java.util.Scanner;
 import java.util.Date;
@@ -16,11 +16,13 @@ public class RealizarVenda {
             if(tipoCliente.equals("1") || tipoCliente.toUpperCase().equals("PF")){
                 System.out.println("Digite o CPF do cliente:");
                 String cpf = sc.nextLine();
+                String nome = "";
                 boolean clienteCadastrado = false;
                 for(int i = 0; i < pf.getlistacpf().size() ; i++){
                     if(pf.getlistacpf().get(i).equals(cpf)){
                         System.out.println("Cliente encontrado!");
                         clienteCadastrado = true;
+                        nome = pf.getListaNome().get(i);
                         i = pf.getlistacpf().size();
                     }
                 }
@@ -33,7 +35,7 @@ public class RealizarVenda {
 
                     System.out.println("Confirme a venda:");
                     System.out.println("Modelo: " + cadastro.getVeiculos().get(veiculo).getModelo()
-                    + "\nCPF do Cliente: " + cpf + "\nData da compra: " + data);
+                    +"\nNome do Cliente: " + nome + "\nCPF do Cliente: " + cpf + "\nData da compra: " + data);
                     System.out.println("Deseja prosseguir? (Sim/Não)");
                     String confirm = sc.nextLine();
                     if(confirm.toUpperCase().equals("SIM")){
@@ -53,10 +55,12 @@ public class RealizarVenda {
             else if(tipoCliente.equals("2") || tipoCliente.toUpperCase().equals("PJ")){
                 System.out.println("Digite o CNPJ do cliente:");
                 String cnpj = sc.nextLine();
+                String nome = "";
                 boolean clienteCadastrado = false;
                 for(int i = 0; i < pj.getListaCNPJ().size() ; i++){
                     if(pj.getListaCNPJ().get(i).equals(cnpj)){
                         System.out.println("Cliente encontrado!");
+                        nome = pj.getListaNome().get(i);
                         clienteCadastrado = true;
                         i = pj.getListaCNPJ().size();
                     }
@@ -70,7 +74,7 @@ public class RealizarVenda {
 
                     System.out.println("Confirme a venda:");
                     System.out.println("Modelo: " + cadastro.getVeiculos().get(veiculo).getModelo()
-                            + "\nCPF do Cliente: " + cnpj + "\nData da compra: " + data);
+                            + "\nNome do Empreendimento: " + nome + "\nCNPJ do Cliente: " + cnpj + "\nData da compra: " + data);
                     System.out.println("Deseja prosseguir? (Sim/Não)");
                     String confirm = sc.nextLine();
                     if(confirm.toUpperCase().equals("SIM")){
