@@ -1,6 +1,6 @@
 package Funcoes.Vendas;
 import Cliente.*;
-import Funcoes.*;
+import Funcoes.Veiculos.CadastroVeiculo;
 import Vendas.*;
 import java.util.Scanner;
 import java.util.Date;

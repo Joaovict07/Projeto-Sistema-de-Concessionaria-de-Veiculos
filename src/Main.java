@@ -1,11 +1,7 @@
 import Funcoes.Veiculos.CadastroVeiculo;
 import Funcoes.Veiculos.EditarVeiculo;
 import Funcoes.Veiculos.RemoverVeiculo;
-
-import Cliente.Cliente;
-import Funcoes.*;
 import Funcoes.Vendas.RealizarVenda;
-import Veiculo.Veiculo;
 import Vendas.*;
 import java.util.*;
 import Cliente.*;
@@ -78,15 +74,20 @@ public class Main {
                 switch(opcao) {
                     case "1":
                         cadastro.iniciarCadastro();
+                        opcao = "0";
                         break;
                     case "2":
                         editar.editar(cadastro.getVeiculos());
+                        opcao = "0";
                         break;
                     case "3":
                         deletar.remover(cadastro.getVeiculos());
+                        opcao = "0";
                         break;
                     case "4":
                         cadastro.mostrarVeiculos();
+                        opcao = "0";
+                        break;
                 }
             }
             if(opcao.equals("3")){

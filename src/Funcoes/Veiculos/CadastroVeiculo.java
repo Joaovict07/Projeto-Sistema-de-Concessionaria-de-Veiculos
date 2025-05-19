@@ -42,17 +42,21 @@ public class CadastroVeiculo {
             }
 
             }
+
+            System.out.println("Informe o preço do veículo: ");
+            float preco = scanner.nextFloat();
+
             String status = "disponível";
             scanner.nextLine();
 
             Veiculo v = null;
             try {
             if (categoria.toUpperCase().equals("CARRO")) {
-                v = new Carro(modelo, fabricante, ano, categoria, status);
+                v = new Carro(modelo, fabricante, ano, preco, categoria, status);
             }else if (categoria.toUpperCase().equals("MOTO")) {
-                v = new Moto(modelo, fabricante, ano, categoria, status);
+                v = new Moto(modelo, fabricante, ano, preco, categoria, status);
             }else if (categoria.toUpperCase().equals("UTILITARIO") || categoria.toUpperCase().equals("UTILITÁRIO")) {
-                v = new Utilitario(modelo, fabricante, ano, categoria, status);
+                v = new Utilitario(modelo, fabricante, ano, preco, categoria, status);
             }else {
                 System.out.println("A categoria de veículo fornecida é inválida!");
                 break;
@@ -86,7 +90,15 @@ public class CadastroVeiculo {
 
         System.out.println("\n=== Veículos Cadastrados ===");
         for (Map.Entry<Integer, Veiculo> entry : veiculos.entrySet()) {
-            System.out.println("[" + entry.getKey() + "] " + entry.getValue());
+            int indice = entry.getKey();
+            Veiculo v = entry.getValue();
+            System.out.println("[" + indice + "]\n" +
+                                "Modelo: " + v.getModelo() + "\n"+
+                                "Fabricante: " + v.getFabricante() + "\n"+
+                                "Preço: " + v.getPreco() + "\n"+
+                                "Ano-Fabricação: " + v.getAno_fabricacao() + "\n"+
+                                "Categoria: " + v.getTipo() + "\n"+
+                                "Status: " + v.getStatus());
         }
         }
 }
