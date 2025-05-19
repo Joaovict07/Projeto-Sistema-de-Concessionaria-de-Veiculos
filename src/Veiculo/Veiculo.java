@@ -1,16 +1,18 @@
 package Veiculo;
 
 public class Veiculo {
-    protected String modelo;
-    protected String fabricante;
-    protected int ano_fabricacao;
-    protected String tipo = "";
-    protected String status = "disponível";
+    private String modelo;
+    private String fabricante;
+    private int ano_fabricacao;
+    private String tipo = "";
+    private String status = "disponível";
+    private float preco;
 
-    public Veiculo(String modelo, String fabricante, int ano_fabricacao, String tipo, String status) {
+    public Veiculo(String modelo, String fabricante, int ano_fabricacao, float preco,  String tipo, String status) {
         this.modelo = modelo;
         this.fabricante = fabricante;
         this.ano_fabricacao = ano_fabricacao;
+        this.preco = preco;
         this.tipo = tipo;
         this.status = status;
     }
@@ -41,6 +43,14 @@ public class Veiculo {
             }else {
                 throw new IllegalArgumentException("Ano de fabricação inválido!");
             }
+    }
+
+    public void setPreco(float preco) {
+        this.preco = preco;
+    }
+
+    public float getPreco() {
+        return this.preco;
     }
 
     public String getTipo() {
