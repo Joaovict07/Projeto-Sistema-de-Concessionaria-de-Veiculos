@@ -1,6 +1,10 @@
 import Funcoes.Veiculos.CadastroVeiculo;
 import Funcoes.Veiculos.EditarVeiculo;
 import Funcoes.Veiculos.RemoverVeiculo;
+
+import Cliente.Cliente;
+import Funcoes.*;
+import Funcoes.Vendas.ListarVendas;
 import Funcoes.Vendas.RealizarVenda;
 import Vendas.*;
 import java.util.*;
@@ -101,6 +105,7 @@ public class Main {
                         RealizarVenda realizarVenda = new RealizarVenda(pf, pj, venda, cadastro);
                     break;
                     case "2":
+                        ListarVendas listarVendas = new ListarVendas(venda);
 
                     break;
                 }
