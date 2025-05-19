@@ -39,9 +39,10 @@ public class RealizarVenda {
                                                 "\nCPF do Cliente: " + cpf + "\nData da compra: " + data);
                     System.out.println("Deseja prosseguir? (Sim/Não)");
                     String confirm = sc.nextLine();
-                    if(confirm.toUpperCase().equals("SIM")){
+                    if(confirm.toUpperCase().equals("SIM") && cadastro.getVeiculos().get(veiculo).getStatus().equals("disponível")){
                         venda.setValorVeiculo(cadastro.getVeiculos().get(veiculo).getPreco());
                         venda.setNomeVeiculo(cadastro.getVeiculos().get(veiculo).getModelo());
+                        cadastro.getVeiculos().get(veiculo).setStatus("Indisponível");
                         venda.setDataVenda(data);
                         venda.setCodigoCliente(cpf);
                         System.out.println("Venda cadastrada com sucesso!");
