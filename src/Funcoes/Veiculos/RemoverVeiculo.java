@@ -14,13 +14,11 @@ public class RemoverVeiculo {
         }
 
         System.out.println("\n=== Veículos disponíveis para remoção ===");
-        System.out.printf("%-10s %-15s %-20s %-25s %-30s\n", "ID", "MODELO", "PREÇO", "FABRICANTE", "ANO");
-        System.out.println("------------------------------------------------");
 
         for (Map.Entry<Integer, Veiculo> entry : veiculos.entrySet()) {
             int indice = entry.getKey();
-            Veiculo v = entry.getValue();
-            System.out.printf("%-10d %-15s %-20f %-20s %-25s\n", indice, v.getModelo(), v.getPreco(), v.getFabricante(), v.getAno_fabricacao());
+            Veiculo veiculo = entry.getValue();
+            System.out.println("Veículo: " + indice + ", Modelo: " + veiculo.getModelo() + ", Preço: " + veiculo.getPreco() + ", Fabricante: " + veiculo.getFabricante() + ", Ano de fabricação: " + veiculo.getAno_fabricacao());
         }
 
         System.out.print("\nDigite o índice do veículo que deseja remover: ");

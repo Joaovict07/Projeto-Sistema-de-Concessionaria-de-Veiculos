@@ -12,13 +12,11 @@ public class EditarVeiculo {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("\n==== Veículos disponíveis para edição ===");
-        System.out.printf("%-10s %-15s %-20s %-25s %-30s", "ÍNDICE", "MODELO", "PREÇO", "FABRICANTE", "ANO");
-        System.out.println("-----------------------------------------------------------------\n");
 
         for (Map.Entry<Integer, Veiculo> entry : veiculos.entrySet()) {
             int indice = entry.getKey();
-            Veiculo v = entry.getValue();
-            System.out.printf("%-10d %-15s %-20.2f %-25s %-30s\n", indice, v.getModelo(), v.getPreco(), v.getFabricante(), v.getAno_fabricacao());
+            Veiculo veiculo = entry.getValue();
+            System.out.println("Veículo: " + indice +  ", Modelo: " + veiculo.getModelo() + ", Preço: " + String.format("%.2f", veiculo.getPreco()) + ", Fabricante: " + veiculo.getFabricante() + ", Ano de Fabricação: " + veiculo.getAno_fabricacao() + ".");
         }
 
         System.out.println("Digite o índice do veículo que deseja editar: ");
