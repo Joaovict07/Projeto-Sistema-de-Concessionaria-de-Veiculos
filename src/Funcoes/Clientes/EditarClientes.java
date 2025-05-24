@@ -67,6 +67,7 @@ public class EditarClientes {
                         System.out.println("ID: " + i + ", Nome: " + pj.getListaNome().get(i) + ", Contato: " + pj.getListaContato().get(i) + ", CNPJ: " +
                                 pj.getListaCNPJ().get(i));
                     }
+                    System.out.println("Digite o ID do cliente que deseja editar: ");
                     int id = scanner.nextInt();
 
                     if (id > pj.getListaCNPJ().size() || id < 0) {

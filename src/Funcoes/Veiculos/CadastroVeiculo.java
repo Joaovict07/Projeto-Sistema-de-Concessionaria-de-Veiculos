@@ -43,7 +43,7 @@ public class CadastroVeiculo {
 
             }
 
-            System.out.println("Informe o preço do veículo: ");
+            System.out.print("Informe o preço do veículo: ");
             float preco = scanner.nextFloat();
 
             String status = "disponível";
