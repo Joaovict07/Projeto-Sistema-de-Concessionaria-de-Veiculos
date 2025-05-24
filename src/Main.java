@@ -25,7 +25,7 @@ public class Main {
         PJ pj = new PJ();
         while (system){
             System.out.println("-------------------------------------------------------------------------------------");
-            System.out.println("                     Seja bem-vindo a nossa concessionária!!!");
+            System.out.println("                     Seja bem-vindo à nossa concessionária!!!");
             System.out.println("-------------------------------------------------------------------------------------");
             System.out.println("Selecione abaixo uma opção: ");
             System.out.println("1. Clientes.");
