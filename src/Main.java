@@ -1,3 +1,11 @@
+/*
+Integrantes:
+Beatriz de Oliveira Sanches Eusebio RA: 923115417
+Christian Ribeiro Gama Franco RA: 923115584
+Douglas de Almeida Nascimento RA: 923111247
+João Victor Silva Bulcão RA: 923116778
+Lucas Tiago Silva Oliveira RA: 423103124
+ */
 import Funcoes.Veiculos.*;
 import Funcoes.Vendas.*;
 import Vendas.*;
